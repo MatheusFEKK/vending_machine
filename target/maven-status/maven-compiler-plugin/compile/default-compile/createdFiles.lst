@@ -1,16 +1,1 @@
-com\mycompany\vending_machine\forms\loginForm$1.class
-com\mycompany\vending_machine\forms\registerProductForm$1.class
-com\mycompany\vending_machine\forms\warningProductRegister$1.class
-com\mycompany\vending_machine\SystemMachine.class
-com\mycompany\vending_machine\forms\menuForm.class
-com\mycompany\vending_machine\forms\loginForm.class
-com\mycompany\vending_machine\forms\warningProductRegister.class
-com\mycompany\vending_machine\ProductSalesReport.class
-com\mycompany\vending_machine\forms\registerProductForm.class
-com\mycompany\vending_machine\Main.class
-com\mycompany\vending_machine\Product.class
-com\mycompany\vending_machine\forms\listProductsForm$1.class
-com\mycompany\vending_machine\Sales.class
-com\mycompany\vending_machine\forms\menuForm$1.class
-com\mycompany\vending_machine\forms\listProductsForm.class
-com\mycompany\vending_machine\forms\menuForm$2.class
+com/mycompany/vending_machine/forms/sellProductForm.class

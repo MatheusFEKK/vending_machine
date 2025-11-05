@@ -5,6 +5,7 @@
 package com.mycompany.vending_machine.forms;
 import com.mycompany.vending_machine.Sales;
 import com.mycompany.vending_machine.Product;
+import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -21,6 +22,10 @@ public class listProductsForm extends javax.swing.JFrame {
      */
     public listProductsForm(Sales systemSales) {
         initComponents();
+        JButton buttonSell = new JButton();
+        buttonSell.setSize(200, 200);
+        buttonSell.setVisible(true);
+        
         this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
         this.systemSales = systemSales;
         if (this.systemSales.products.isEmpty())
@@ -30,7 +35,7 @@ public class listProductsForm extends javax.swing.JFrame {
             for (Product product : this.systemSales.products)
             {
                  DefaultTableModel model = (DefaultTableModel) productTable.getModel();
-                 Object[] data = {product.getProductId(), product.getProductName(), product.getProductDescription(), product.getProductPrice(), product.getProductStock()};
+                 Object[] data = {product.getProductId(), product.getProductName(), product.getProductDescription(), product.getProductPrice(), product.getProductStock(), buttonSell};
                  model.addRow(data);
                  System.out.println("\nID: " + product.getProductId() + "\nName: " + product.getProductName() + "\nDescription: " + product.getProductDescription() 
 					+ "\nPrice: " + product.getProductPrice() + "\nStock: " + product.getProductStock() + "\n");
@@ -57,14 +62,14 @@ public class listProductsForm extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "NAME", "DESCRIPTION", "PRICE", "STOCK"
+                "ID", "NAME", "DESCRIPTION", "PRICE", "STOCK", "SELL"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Integer.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {

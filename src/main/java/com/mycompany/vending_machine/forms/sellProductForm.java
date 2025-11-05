@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.vending_machine.forms;
-
+import com.mycompany.vending_machine.Sales;
 /**
  *
  * @author mathe
@@ -11,12 +11,14 @@ package com.mycompany.vending_machine.forms;
 public class sellProductForm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(sellProductForm.class.getName());
-
+    private Sales systemSales;
     /**
      * Creates new form sellProductForm
+     * @param systemSales
      */
-    public sellProductForm() {
+    public sellProductForm(Sales systemSales) {
         initComponents();
+        this.systemSales = systemSales;
     }
 
     /**
@@ -66,7 +68,7 @@ public class sellProductForm extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new sellProductForm().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new sellProductForm(new Sales()).setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

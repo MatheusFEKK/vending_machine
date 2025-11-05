@@ -96,7 +96,7 @@ public class loginForm extends javax.swing.JFrame {
 			System.out.println("Access granted");
                         this.setVisible(false);
                         this.dispose();
-                        this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+                        this.setDefaultCloseOperation(loginForm.EXIT_ON_CLOSE);
                         menuForm menu = new menuForm();
                         menu.setVisible(true);
 		}else {
