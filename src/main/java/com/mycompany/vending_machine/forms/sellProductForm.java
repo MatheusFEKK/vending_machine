@@ -19,6 +19,7 @@ public class sellProductForm extends javax.swing.JFrame {
     public sellProductForm(Sales systemSales) {
         initComponents();
         this.systemSales = systemSales;
+        this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -30,21 +31,60 @@ public class sellProductForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        idProductSellInput = new javax.swing.JTextField();
+        qtnProductSellInput = new javax.swing.JTextField();
+        sellProductButton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        sellProductButton.setText("Sell");
+        sellProductButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sellProductButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(196, 196, 196)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(qtnProductSellInput, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(idProductSellInput, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(306, 306, 306)
+                        .addComponent(sellProductButton)))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(idProductSellInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(qtnProductSellInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addComponent(sellProductButton)
+                .addGap(58, 58, 58))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void sellProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sellProductButtonActionPerformed
+        if(this.systemSales.sellProduct(Integer.parseInt(idProductSellInput.getText()), Integer.parseInt(qtnProductSellInput.getText())))
+        {
+            warningProductRegister warningWindow = new warningProductRegister("Product selled with success!");
+            warningWindow.setVisible(true);
+        }else{
+            warningProductRegister warningWindow = new warningProductRegister("Error trying to sell this product");
+            warningWindow.setVisible(true);
+        }
+    }//GEN-LAST:event_sellProductButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -72,5 +112,8 @@ public class sellProductForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField idProductSellInput;
+    private javax.swing.JTextField qtnProductSellInput;
+    private javax.swing.JButton sellProductButton;
     // End of variables declaration//GEN-END:variables
 }

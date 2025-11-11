@@ -54,7 +54,12 @@ public class menuForm extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("VIEW SALES REPORT");
+        jButton3.setText("SELL A PRODUCT");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("jButton1");
 
@@ -115,6 +120,11 @@ public class menuForm extends javax.swing.JFrame {
         registerProductForm registerProduct = new registerProductForm(this.systemSales);
         registerProduct.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        sellProductForm sellProductInterface = new sellProductForm(this.systemSales);
+        sellProductInterface.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
